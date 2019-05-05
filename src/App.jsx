@@ -20,6 +20,11 @@ const WebWorker = Loadable({
   loading: LoadingComponent
 });
 
+const M3u8 = Loadable({
+  loader: () => import('./page/m3u8'),
+  loading: LoadingComponent
+});
+
 const Error = Loadable({
   loader: () => import('./page/error/error'),
   loading: LoadingComponent
@@ -34,6 +39,7 @@ class App extends Component {
         <SwitchDefault>
           <Route exact={true} path='/' component={WebWorkGame} />
           <Route exact={true} path='/worker' component={WebWorker} />
+          <Route path='/m3u8' component={M3u8} />
           <Route exact={true} path='/error' component={Error} />
         </SwitchDefault>
 

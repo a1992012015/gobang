@@ -10,6 +10,7 @@
     "connected-react-router": "^6.0.0",
     "history": "^4.7.2",
     "hoist-non-react-statics": "^3.2.1",
+    "howler": "^2.1.1",
     "moment": "^2.23.0",
     "qs": "^6.6.0",
     "random-js": "^1.0.8",
@@ -17,12 +18,14 @@
     "react-countdown-clock": "^2.5.0",
     "react-dom": "^16.7.0",
     "react-loadable": "^5.5.0",
+    "react-player": "^1.8.0",
     "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.2",
     "redux": "^4.0.1",
     "redux-persist": "^5.10.0",
-    "redux-saga": "^0.16.2"
+    "redux-saga": "^0.16.2",
+    "socket.io": "^2.2.0"
   },
   "husky": {
     "hooks": {
@@ -38,6 +41,7 @@
   "scripts": {
     "start": "rescripts start",
     "build": "rescripts build",
+    "build:qa": "rescripts build react-scripts && rm -rf ../tianfu-tv-api/public/* && mv build/* ../tianfu-tv-api/public/",
     "test": "rescripts test",
     "eject": "react-scripts eject"
   },

@@ -18,6 +18,11 @@ class NavigationList extends Component {
           path: '/worker',
           name: 'Worker',
           label: '/worker'
+        },
+        {
+          path: '/m3u8',
+          name: 'm3u8',
+          label: '/m3u8'
         }
       ]
     };
@@ -47,11 +52,8 @@ class NavigationList extends Component {
     this.props.history.push(value);
   };
 
-  changeNavigationSelected = (pathname) => {
-    const index =
-      pathname.indexOf('/', 1) !== -1
-        ? pathname.indexOf('/', 1)
-        : pathname.length;
+  changeNavigationSelected = pathname => {
+    const index = pathname.indexOf('/', 1) !== -1 ? pathname.indexOf('/', 1) : pathname.length;
     const value = pathname.slice(0, index);
     this.setState({ value });
   };
@@ -59,10 +61,7 @@ class NavigationList extends Component {
   render() {
     const { value, navigation } = this.state;
     return (
-      <BottomNavigation value={value}
-                        onChange={this.handleChange}
-                        showLabels
-                        className={styles['navigation-list']}>
+      <BottomNavigation value={value} onChange={this.handleChange} showLabels className={styles['navigation-list']}>
         {navigation.map(item => {
           return (
             <BottomNavigationAction
